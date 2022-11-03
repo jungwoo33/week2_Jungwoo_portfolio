@@ -1,0 +1,220 @@
+html{
+    /*font-family: Verdana, Arial, Helvetica, sans-serif,serif;*/
+}
+body{
+    width: 100%; /* occupy entire screen */
+    max-width: 1920px; /* set the maximum screen size */
+    margin: 0; /* top & bottom: 0px, right & left: center */
+    font-size: 100%; /* let's set the base (parent) font size to 100%. Then, later, it will be easy to change the child element's font size. */
+}
+/* Header ====================================================== */
+header{
+    width: 100%; /*100% of the width of body*/
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1.25%; /*20px;*/
+    background-color: #13293d;
+    color: darkblue;
+
+    background-image: url("../../pictures/Corpus_Christi_grid.png");
+    height: 9.375%; /*150px;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header p{
+    font-size: 1.25em; /*15pt;*/
+    font-style: italic;
+    font-weight: bold;
+}
+  
+h1{
+    font-size: 2.5em; /*30pt;*/
+}
+h2{
+    display: flex;
+    color: darkblue;
+    font-size: 1.5em; /*18pt;*/
+    font-weight: bold;
+}
+/* End of Header ==================================================*/
+
+/* main navigation bar ----------------------------------------------*/
+#main_navi{
+    display: flex;
+    background-color: #ffc107;
+    width: 100%; /*100% of the width of body*/
+}
+#main_navi a{
+    color: white;
+    padding: 0.875% 1.25%; /*14px 20px;*/
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px blue;
+}
+#main_navi a:hover{
+    background-color: #13293d;
+}
+/* End of the main navigation bar ----------------------------------*/
+
+
+/* main =============================================================*/
+main{
+    padding-left: 18.75%; /*300px;*/
+    padding-right: 18.75%; /*300px;*/
+    padding-bottom: 3.125%; /*50px;*/
+    padding-top: 0.625%; /*10px;*/
+}
+/* sub navigation bar ----------------------------------------------*/
+#sub_navi{
+    display: flex;
+    background-color: blueviolet;
+}
+#sub_navi a{
+    color: white;
+    padding: 0.875% 1.25%; /*14px 20px;*/
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px green;
+}
+#sub_navi a:hover{
+    background-color: #13293d;
+}
+/* end of sub navigation bar ---------------------------------------*/
+
+/* home/About us/Gom valication/Publication/Contact ================*/
+/* equations */
+#equation_53{
+    width: 90%; /* normal */
+    max-width: 80%; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#equation_63{
+    width: 50%; /* normal */
+    max-width: 30%; /* stop increasing */
+    min-width: 250px; /* stop squeezing */
+}
+#equation_65{
+    width: 70%; /* normal */
+    max-width: 40%; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+
+/* figures */
+#fig_7{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_8_5{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_10{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_12{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_13{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_14{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_15{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+#fig_16{
+    width: 100%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+
+/* figure captions */
+figcaption{
+    font-size: 1.25em; /*15pt;*/
+    text-align: left;
+    font-style: italic;
+}
+
+/* paragraphs */
+p{
+    font-size: 1.25em; /*15pt;*/
+}
+.home p{
+    font-size: 1.25em; /*15pt;*/
+}
+.about_us p{
+    font-size: 1.25em; /*15pt;*/
+}
+.gom_validation p{
+    font-size: 1.25em; /*15pt;*/
+}
+.publications p{
+    font-size: 1.25em; /*15pt;*/
+}
+.contact p{
+    font-size: 1.25em; /*15pt;*/
+}
+address{
+    font-style: normal;
+    font-size: 1.25em; /*15pt;*/
+}
+
+#jw_jl {
+    /*height: 700px;*/
+    display: flex;
+    justify-content: center;
+    padding-top: 3.125em; /*50px;*/
+    /*border: 3px solid yellow;*/
+
+    width: 70%; /* normal */
+    max-width: 700px; /* stop increasing */
+    min-width: 350px; /* stop squeezing */
+}
+/* end of home =====================================================*/
+/* End of main =====================================================*/
+
+/* media query =====================================================*/
+@media screen and (max-width: 850px){
+    /* reduce the font size & main body's left/right padding */
+    body{
+        font-size: 70%;
+    }
+    main{
+        padding-left: 9.375%; /*150px;*/
+        padding-right: 9.375%; /*150px;*/
+        padding-bottom: 3.125%; /*50px;*/
+        padding-top: 0.625%; /*10px;*/
+    }    
+}
+@media screen and (max-width: 550px){
+    /* reduce the font size & main body's left/right padding */
+    body{
+        font-size: 50%;
+    }
+    main{
+        padding-left: 1.25%; /*20px;*/
+        padding-right: 1.25%; /*20px;*/
+        padding-bottom: 3.125%; /*50px;*/
+        padding-top: 0.625%; /*10px;*/
+    }    
+}
+/* end of media query ================================================*/
+
+
