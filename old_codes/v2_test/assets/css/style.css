@@ -1,0 +1,84 @@
+*{
+    /*font-family: sans-serif,serif;*/
+}
+/* Header ====================================================== */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    background-color: #13293d;
+    color: darkblue;
+
+    background-image: url("../../pictures/Corpus_Christi_grid.png");
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header p{
+    font-size: 15pt;
+    font-style: italic;
+}
+  
+h1{
+    font-size: 30pt;
+}
+/* End of Header ==================================================*/
+
+/* navigation bar =================================================*/
+nav{
+    display: flex;
+    background-color: #ffc107;
+}
+nav a{
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px blue;
+
+}
+nav a:hover{
+    background-color: #13293d;
+}
+
+/* End of navigation bar ===========================================*/
+main{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+/* home/About us/Gom valication/Publication/Contact ================*/
+.home p{
+    font-size: 14pt;
+}
+.about_us p{
+    font-size: 14pt;
+}
+.gom_validation p{
+    font-size: 14pt;
+}
+.publications p{
+    font-size: 14pt;
+}
+.contact p{
+    font-size: 14pt;
+}
+address{
+    font-style: normal;
+    font-size: 14pt;
+}
+
+.photo {
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    border: 3px solid yellow;
+}
+/* End of Home =====================================================*/
+
+
+

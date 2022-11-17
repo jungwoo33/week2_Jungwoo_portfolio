@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Home of the General Ocean Model (GOM)</title>
+        <link rel="icon" href="./pictures/Grizzly.ico">
+        <link rel="styesheet" type="text/css" href="./assets/css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Home of the General Ocean Model (GOM)</h1>
+            <p>Unstructured-grid Finite-volume General Ocean Model</p>
+            <!--
+                <img id="Corpus" src="./pictures/Corpus_Christi_grid.png" alt="Corpus Christi model grid" style="width:100%";/>
+            -->
+        </header>
+        <nav id="main_navi">
+            <a href="./index.html">HOME</a>
+            <a href="./about_us.html">ABOUT US</a>
+            <a href="./validation.html">GOM VALIDATION</a>
+            <a href="./publication.html">PUBLICATIONS</a>
+            <a href="./contact.html">CONTACT</a>
+        </nav>
+        <main>
+            <div class="about_us">
+                <h2>&lt;ABOUT US&gt;</h2>
+                <p>
+                    Why is it so complicated? Is there any possibility I can make it easy to use? These were two questions I had whenever I tried to learn a new numerical model; at least to me, it was not that easy to learn a new model. There is a proverb in Korea, “A thirsty man digs a well,” and I decided to develop an easy-to-use model by myself. I proposed a project “Development of the algal bloom forecasting model”, which aimed to develop a three-dimensional (3D) hydrodynamic model, right after I joined the Korea Institute of Civil Engineering and Building Technology (KICT) in 2015. I especially would like to thank Dr. Seog-Ku Kim, who was my supervisor at that time, for encouraging me to pursue the project even though most of the other modelers in Korea did not favor to develop a new model but favored to use existing models. Even though I had experiences with some well-known ocean circulation models, it was not easy to develop a model from the scratch in a few years. Luckily, I had my academic big brother Dr. Jun Lee; I and Dr. Jun Lee both graduated from the University of Florida. Dr. Jun Lee is a true expert in numerical modeling, and he had a 3D model development experience. We pulled out his old source codes which were buried in an old USB drive, and we started to develop a new 3D model that aims to be an easy-to-use model.
+                    <br>
+                    <br>
+                    My first numerical modeling experience goes back to 2003 in my master’s degree with the Environmental Fluid Dynamics Code which was developed by Dr. John Hamrick. Without any knowledge of numerical modeling or even without the knowledge of the Fortran, I studied how to run the EFDC model by just reading the manual. Since 2003, I have experienced several other well-known ocean circulation models such as the Regional Ocean Modeling System (ROMS), the Finite Volume Community Ocean Model (FVCOM), Advanced Circulation Model (ADCIRC), and, recently, the Semi-Implicit Cross-Scale Hydroscience Integrated System Model (SCHISM). Each model has pros and cons, but overall, I loved the EFDC the most with its simplicity in the compiling process and user-friendly input and output file structures. For this reason, I benchmarked the input file structure of the EFDC when developing this model, the General Ocean Model (GOM). For this reason, users may find great similarity in input files between GOM and EFDC.
+                    <br>
+                    <br>
+                    When we, I and Dr. Jun Lee, started to code this model, GOM, we aimed to achieve the following three main goals: (1) the model must be easy to use (i.e., user-friendly) even for beginners, (2) the model must be fast enough, and (3) the model must be stable and provide exact solutions. As I mentioned above, the first goal could be achieved by benchmarking the EFDC. To achieve the second and the third goal, we focused on the Casulli and Walters (2000) work. Following Casulli and Walters (2000) paper, we could achieve the second and third goals. Now, at this point, I believe our model, GOM, fulfills the three proposed goals, thus I am proud of our model.
+                    <br>
+                    <br>                    
+                    As one of the most ordinary modelers, I coded this model at the eye level of a common modeler. Thus, our model, GOM, might not have distinctive features as other models, which some genius modelers developed, have. However, GOM might give users the most general functionalities which may most users ask the models. That is why I gave the name, the General Ocean Model, to our model. Also, the pronunciation of the GOM in Korean means “Bear,” and a bear is smart, strong, and even fast, and that is why selected the name, GOM.
+                    <br>
+                    <br>                    
+                    The journey to today, which I am writing this “preface”, was not that easy. While I was working in the KICT, I decided to move to the USA, and I quit the job in 2018. My first job since I moved to the USA was the St. Johns River Water Management District (SJRWMD). I worked at SJRWMD for eight months, and I loved my job at the SJRWMD, and I would like to thank my supervisor Dr. Peter Sucsy for his kind support. Then, I had to find (for some reason) the next job, and I joined the Texas Water Development Board in 2019. After joing TWDB, I had time to work on the GOM only at night and weekends, since I had to do assigned works at the company. My lovely two sons, Jaden and Jasen, always asked me “Daddy, take a rest, otherwise, you will die.” Well, I have survived sons!
+                    <br>
+                    <br>                    
+                    I spent a long time and a lot of effort learning what I now know about numerical methods including programming languages and Linux systems. Most of this learning process was quite painful at least to me. Because I know how painful this learning process is, I really focused on the easiness of use when developing the GOM. I hope the GOM helps users to alleviate stresses as which I had when learning a new model, compiling source codes, and digging into some error sources. I can be reached at my email address at jungwoo33@gmail.com. Then, good luck with your journey to numerical modeling!
+                    <br>
+                    <br>                    
+                    Jungwoo Lee
+                    <br>
+                    <br>                    
+                    At my kids’ room, Austin, Texas
+                    <br>
+                    <br>                    
+                    October 26, 2020                    
+                </p>
+            </div>
+        </main>
+    </body>
+</html>
