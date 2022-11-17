@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Home of the General Ocean Model (GOM)</title>
+        <link rel="icon" href="./pictures/Grizzly.ico">
+        <link rel="styesheet" type="text/css" href="./assets/css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Home of the General Ocean Model (GOM)</h1>
+            <p>Unstructured-grid Finite-volume General Ocean Model</p>
+            <!--
+                <img id="Corpus" src="./pictures/Corpus_Christi_grid.png" alt="Corpus Christi model grid" style="width:100%";/>
+            -->
+        </header>
+        <nav id="main_navi">
+            <a href="./index.html">HOME</a>
+            <a href="./about_us.html">ABOUT US</a>
+            <a href="./validation.html">GOM VALIDATION</a>
+            <a href="./publication.html">PUBLICATIONS</a>
+            <a href="./contact.html">CONTACT</a>
+        </nav>
+
+        <main>
+            <section>
+                <nav id="sub_navi">
+                    <a href="#gom_validation">GOM VALIDATION</a>
+                    <a href="#wind_setup">WIND SETUP</a>
+                    <a href="#tidal_propagation">TIDAL PROPAGATION IN A RECTANGULAR BASIN</a>
+                    <a href="#quarter_annular">QUARTER ANNULAR HABOR TEST</a>
+                    <a href="#wetting_drying">WETTING AND DRYING TEST ON TIDAL FLATS</a>
+                </nav>
+            </section>
+            <section id="gom_validation">
+                <h2>&lt;GOM VALIDATION&gt;</h2>
+                <p>
+                    Governing equations, grid systems, numerical schemes, and solution algorithms used in GOM is well interested in the original GOM paper (Lee et al., 2020). These processes may be similar or identical to other models. However, conveying this information into a computer machine language is all different, and we used a standard FORTRAN 90 for this, Even though these processes are well-proven and robust approaches, any mistake in the final coding process leads to failure. To check the final success of this project, we compared a newly developed model, GOM, to well-known analytical solutions.                 
+                </p>    
+            </section>
+            
+            <section id="wind_setup">
+                <h2>&lt;WIND SETUP&gt;</h2>
+                <p>
+                    If the steady-state wind is applied on a basin, there should be a wind setup at one side and setdown at the opposite side; this test is called the “Wind Setup” test.  We tested this wind setup case with a rectangular basin assuming constant wind stress of 0.1 N/m2 (i.e., 1 dyne/cm2). The analytical results of setup and setdown should be 2.04 cm at each side, and the numerical results achieved with GOM are identical to the analytical results. The GOM reaches to the steady-state in one day.
+                </p>
+                <figure>
+                    <img id="fig_7" src="./pictures/Figure 7_wind setup.png" alt="figure_7">
+                    <figcaption>Numerical results of the wind setup test.</figcaption>
+                </figure>
+                
+            </section>
+            
+            <section id="tidal_propagation">
+                <h2>&lt;TIDAL PROPAGATION IN A RECTANGULAR BASIN&gt;</h2>
+                <p>
+                    Tide is the most significant phenomenon in the ocean, and thus tidal simulation is one of the most important applications of a coastal and estuarine hydrodynamic model. If a rectangular basin is forced by tide, the analytical solution of the one-dimensional shallow wave equations for water surface elevation is:
+                </p>
+                <img id="equation_53" src="./pictures/Eq(53).png" alt="Eq_53">
+                <p>
+                    A rectangular basin with a constant depth is considered for the tidal propagation test, and the computational domain is discretized with mixed (triangular and quadrilateral) meshes as shown below:
+                </p>
+                <figure>
+                    <img id="fig_8_5" src="./pictures/Figure 8.png" alt="figure_8">
+                    <figcaption>Figure 1. Computation domain and mixed (triangular and quadrilateral) meshes for tidal propagation tests. Three red dots denote the model simulation comparison locations: from the left to the right - station 1,2,3.</figcaption>
+                </figure>
+                <p>
+                    Input tidal forcing along the open boundary was set with 0.5 meter of amplitude and a period of 12.42 hour. The model result with implicitness parameter = 0.5, had a little discrepancy with analytical solutions but mostly agreed well: 
+                </p>
+                <figure>
+                    <img id="fig_10" src="./pictures/Figure 10.png" alt="figure_10">
+                    <figcaption>Figure 2. Comparison of water surface elevation for the tidal propagation test at three different locations with theta = 0.5. Solid lines and circles represent analytical solutions and numerical results, respectively. St_1, ST_2, and ST_3 denote result extraction locations shown in Figure 1.</figcaption>
+                </figure>
+                
+            </section>
+            
+            <section id="quarter_annular">
+                <h2>&lt;QUARTER ANNULAR HABOR TEST&gt;</h2>
+                <p>
+                    Lynch and Gray (1978) derived the analytical solutions for a tidally forced estuary with a flat bottom and a sloping bottom. The quarter-annular test, which contains spatially varying geometry and bathymetry, is one of the well-known test cases for testing the integrated numerical schemes of a developed ocean circulation numerical model. Numerical results will be poor with spurious oscillations or with excessive numerical dissipation if poor numerical schemes are used. 
+                    <br>
+                    <br>
+                    Neglecting nonlinear, Coriolis, and horizontal diffusion terms and assuming linear bottom friction, we can obtain the following analytic solutions for surface elevation:
+                </p>
+                <img id="equation_63" src="./pictures/Eq(63).png" alt="Eq_63">
+                <p>where</p>
+                <img id="equation_65" src="./pictures/Eq(65).png" alt="Eq_65">
+                <p>
+                    and N is the eddy viscosity; k is the bottom friction.
+                    <br>
+                    <br>
+                    The tested computational domain consists of a quarter of an annulus enclosed with land boundaries on three sides and an open ocean boundary on the outer edge. Then, the computational domain consists of 48 rectangular cells with 63 nodes (Figure 1).
+                </p>
+                <figure>
+                    <img id="fig_12" src="./pictures/Figure 12.jpg" alt="figure_12">
+                    <figcaption>Figure 1. Computational mesh for the quarter annular test. Upper panel: x-y plane, lower panel: x-z plane. Three data extraction locations are shown with numbers on the upper panel.</figcaption>
+                </figure>
+                <p>
+                    The model started from a state of rest, and periodic tidal force at the open boundary, advection, and quadratic bottom friction terms are activated. The elevation boundary is forced with a spatially uniform M2 tide (tidal period = 12.42 hrs) with amplitude of 0.3048m (= 1ft). Total simulation time was set to 5 days with a time step of 174.656 seconds. Modeled water level time series are extracted every time step at three different locations in the domain, and the numerical results showed a good agreement with analytical solutions:
+                </p>
+                <figure>
+                    <img id="fig_13" src="./pictures/Figure 13.png" alt="figure_13">
+                    <figcaption>Figure 2. Comparison of water surface elevation for the Quarter Annular test case at three different locations. Solid lines and circles represent analytical solutions and numerical results, respectively. ST_1, ST_2, and ST_3 denote results extraction locations shown in Figure 1.</figcaption>
+                </figure>
+                
+            </section>
+            <section id="wetting_drying">
+                <h2>&lt;WETTING AND DRYING TEST ON TIDAL FLATS&gt;</h2>
+                <p>
+                    To validate the wetting and drying scheme implemented in the GOM, we compared our model results with the analytical solution developed by Carrier and Greenspan (1958). To compare with the analytical solution, a rectangular basin with a linearly sloping bottom is considered. The length and the width of the basin are set to 55 km and 100 m respectively. The water depth at the origin, x = 0 m, is set to 50 m, and the bottom slope is 1:1000; thus, the initial land and water interface is at x = 50 km (Figure 1). 
+                </p>
+                <figure>
+                    <img id="fig_14" src="./pictures/Figure 14.jpg" alt="figure_14">
+                    <figcaption>Figure 1. Definition sketch for Carrier and Greenspan (1958) analytical soultion on a linearly sloping beach, where MSL denotes the mean sea level; h is the water depth; eta(x,t) is space and time-dependent water surface elevation; and alpha is the bottom slope.</figcaption>
+                </figure>
+                <p>
+                    The computational domain is divided by 550 x 1 quadrilateral elements (dx, dy = 100 m). A periodic tide with an amplitude 0.2 m and a period of 1 hr is applied at the open boundary, at x = 0 m. Numerical simulation results show that the analytical and the numerical solutions are in good agreement, showing that the wetting and drying process implemented in GOM works well:
+                </p>
+                <figure>
+                    <img id="fig_15" src="./pictures/Figure 15.png" alt="figure_15">
+                    <figcaption>Figure 2. Comparison of wave profiles as predicted by theory (solid red lines) and numerical model (blue circles) of wetting and drying at time = 0 to pi/2.</figcaption>
+                </figure>
+                <figure>
+                    <img id="fig_16" src="./pictures/Figure 16.png" alt="figure_16">
+                    <figcaption>Figure 3. Comparison of waver profiles as predicted by theory (solid red lines) and numerical model (blue circles) of wetting and drying at time = 2pi/3 to pi.</figcaption>
+                </figure>
+            </section>
+        </main>
+    </body>
+</html>
