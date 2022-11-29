@@ -3,13 +3,13 @@ html{
 }
 body{
     width: 100%; /* occupy entire screen */
-    max-width: 1920px; /* set the maximum screen size */
+    /*max-width: 1920px; /* set the maximum screen size */
     margin: 0; /* top & bottom: 0px, right & left: center */
     font-size: 100%; /* let's set the base (parent) font size to 100%. Then, later, it will be easy to change the child element's font size. */
 }
 /* Header ====================================================== */
 header{
-    width: 100%; /*100% of the width of body*/
+    /*width: 100%; /*100% of the width of body*/
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -45,7 +45,7 @@ h2{
 #main_navi{
     display: flex;
     background-color: #ffc107;
-    width: 100%; /*100% of the width of body*/
+    /*width: 100%; /*100% of the width of body*/
 }
 #main_navi a{
     color: white;

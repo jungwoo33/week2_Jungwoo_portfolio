@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Home of the General Ocean Model (GOM)</title>
+        <link rel="icon" href="./pictures/Grizzly.ico">
+        <link rel="styesheet" type="text/css" href="./assets/css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Home of the General Ocean Model (GOM)</h1>
+            <p>Unstructured-grid Finite-volume General Ocean Model</p>
+            <!--
+                <img id="Corpus" src="./pictures/Corpus_Christi_grid.png" alt="Corpus Christi model grid" style="width:100%";/>
+            -->
+        </header>
+        <nav id="main_navi">
+            <a href="./index.html">HOME</a>
+            <a href="./about_us.html">ABOUT US</a>
+            <a href="./validation.html">GOM VALIDATION</a>
+            <a href="./publication.html">PUBLICATIONS</a>
+            <a href="./contact.html">CONTACT</a>
+        </nav>
+        <main>
+            <div class="home">
+                <h2>&lt;HOME&gt;</h2>
+                <p>
+                    <b>GOM</b> is developed by Jun Lee and Jungwoo Lee, who both graduated from the University of Florida. 
+                    GOM is the Unstructured-grid Finite-volume ocean circulation model, which aims to simulate general ocean circulations.
+                    <br>
+                    <br>
+                    <b>GOM</b> was developed by combining finite difference and finite volume numerical schemes, taking advantage of the computational efficiency of the finite difference method (FDM), the exact conservation of finite volume method (FVM), and the flexibility of representing complex geometry with an orthogonal unstructured mesh system. 
+                    The advantage of the unstructured mesh system over the structured grid system is obvious, but it requires more simulation effort; i.e., the unstructured mesh system well resolves complex boundaries, on the other hand, the structured grid system is difficult to resolve complex geometries but has a regular structured algebraic equation system and thus it has an efficient solution technique. 
+                    The refining model grid to better represent a complex coastal geometry enforces modelers to use a small simulation time step to ensure numerical stability. 
+                    Even though it has been common to use a high-performance computing (HPC) system, implementing either distributed memory Message Passing Interface (MPI) or shared memory Open Multi-Processing (OpenMP), it is also true that it requires more high simulation costs and longer simulation time by demanding of more dramatic grid refinement. 
+                    Thus, it is required more efficient numerical schemes and algorithms to adapt the unstructured grid system.  
+                    <br>
+                    <br>                
+                    Traditionally, the most significant bottleneck, when solving shallow water equations, arise at the propagation term when using traditional explicit schemes. 
+                    However, the bottleneck is now well overcome with the semi-implicit approach, so-called theta scheme, which was successfully adapted in several ocean models (e.g., Unstructured nonlinear Tidal Residual Inter-tidal Mudflat model (UnTRIM) by Casulli and Walters, 2000; Stanford Unstructured Nonhydrostatic Terrain following Adaptive Navier-Stokes Simulator (SUNTANS) by Fringer et al., 2006; Semi-Implicit Cross-Scale Hydroscience Integrated System Model (SCHISM) by Zhang et al., 2015, 2016). 
+                    Then, another significant bottleneck appears in the nonlinear advection term, and the bottleneck can be successfully removed by using the time-explicit Eulerian-Lagrangian Method (ELM), which is also known as the Semi-Lagrangian (SL) method in the field of the atmospheric modeling. 
+                    The ELM, which is an unconditionally stable scheme even though it is an explicit method (Starniforth and Cote, 1991), has been getting attention more and more in the ocean modeling community since Casulli and Walters (2000) adapted the method in their model, UnTRIM, and successfully applied in San Francisco Bay area (e.g., MacWilliams and Gross, 2013; MacWilliams et al., 2015; MacWilliams et al., 2016). 
+                    Distinct features of well-recognized ocean circulation models, which are actively used in the United States of America, are well summarized by Fringer et al. (2019). 
+                    Each model which introduced by Fringer et al. (2019), has different approaches in horizontal/vertical coordinates systems, numerical schemes, and algorithms when solving governing equations based on the model development purpose. 
+                    Among those approaches, we greatly benchmarked UnTRIM of Casulli and Walters (2000), and we developed a new three-dimensional (3D) estuarine circulation model including following features to apply our model in general coastal water bodies: (1) unstructured orthogonal triangular and/or quadrilateral horizontal mesh system, (2) z-grid system in vertical, (3) inclusion of winds stress, atmospheric pressure, Coriolis, horizontal/vertical diffusion, and bottom friction, (4) FVM/FDM for equation discretization, (5) ELM for the non-linear advection equation, (6) semi-implicit method for tidal propagation, and (7) wetting and drying. 
+                    The model we developed here, GOM, is based on well-proven numerical techniques, thus it is robust, accurate, and fast.                
+                </p>
+            </div>
+        </main>
+    </body>
+</html>
