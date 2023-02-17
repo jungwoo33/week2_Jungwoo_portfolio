@@ -1,0 +1,21 @@
+<div class="single-trip">
+  {{> trip-info trip}}
+</div> <!-- this will close the trip-info's card div -->
+
+<!-- only display for a logged-in user -->
+{{#if loggedIn}}
+  <form class="comment-form">
+    <div>
+      <textarea class="textarea" name="comment-body" placeholder="your comments here:" rows="5"></textarea>
+    </div>
+    <div>
+      <button id="comment-btn" class="button is-link is-pulled-right" type="submit">add comment</button>
+    </div>
+  </form>
+{{/if}}
+
+{{> comments trip.comments}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
